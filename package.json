@@ -15,6 +15,7 @@
     "idoc": {
         "theme": "default",
         "md": [
+            "首页.md",
             {
                 "React": [
                     "React第八天.md",
@@ -28,21 +29,8 @@
                     "React第一天.md",
                     " webpack 的基本使用.md"
                 ]
-            },
-            "index.md",
-            {
-                "React": [
-                    "React  第六天.md",
-                    "React 八天.md",
-                    "React 第 九 天.md",
-                    "React 第一天.md",
-                    "React 第三天.md",
-                    "React 第二天.md",
-                    "React 第五天.md",
-                    "React 第四天.md",
-                    "webpack 的基本使用.md"
-                ]
-            }
+            
+            
         ]
     }
 }
