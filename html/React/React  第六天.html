@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZZ:D</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                ZZ:D
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="#"><span></span>React</a><ul><li><a href="../../index.html">React第八天</a></li><li><a href="../../index.html">React第九天</a></li><li><a href="../../index.html">React第七天</a></li><li><a href="../../index.html">React第六天</a></li><li><a href="../../index.html">React第五天</a></li><li><a href="../../index.html">React第四天</a></li><li><a href="../../index.html">React第三天</a></li><li><a href="../../index.html">React第二天</a></li><li><a href="../../index.html">React第一天</a></li><li><a href="../../index.html"> webpack 的基本使用</a></li></ul></li><li><a href="../../html/index.html">index</a></li><li><a href="#"><span></span>React</a><ul><li class="active"><a href="../../html/React/React  第六天.html">React  第六天</a></li><li><a href="../../html/React/React 八天.html">React 八天</a></li><li><a href="../../html/React/React 第 九 天.html">React 第 九 天</a></li><li><a href="../../html/React/React 第一天.html">React 第一天</a></li><li><a href="../../html/React/React 第三天.html">React 第三天</a></li><li><a href="../../html/React/React 第二天.html">React 第二天</a></li><li><a href="../../html/React/React 第五天.html">React 第五天</a></li><li><a href="../../html/React/React 第四天.html">React 第四天</a></li><li><a href="../../html/React/webpack 的基本使用.html">webpack 的基本使用</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0React 第六天">React 第六天</a><ul><li><a href="#t1state (状态)">state (状态)</a></li><li><a href="#t2使用ref 来获取真实 DOM 的方式">使用ref 来获取真实 DOM 的方式</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0React &#x7B2C;&#x516D;&#x5929;">React &#x7B2C;&#x516D;&#x5929; <a href="#t0React &#x7B2C;&#x516D;&#x5929;"> # </a></h1>
+<h3 id="t1state (&#x72B6;&#x6001;)">state (&#x72B6;&#x6001;) <a href="#t1state (&#x72B6;&#x6001;)"> # </a></h3>
+<ul>
+<li>&#x4E00;&#x5207;&#x72B6;&#x6001;</li>
+</ul>
+<ul>
+<li>&#x72B6;&#x6001;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;react&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;</li>
+<li>state &#x7BA1;&#x7406;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x6570;&#x636E;&#x548C;&#x72B6;&#x6001;</li>
+<li>&#x4FEE;&#x6539;<code>state</code> &#x9700;&#x8981;&#x7528;<code>setState</code>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</li>
+</ul>
+<p>&#x4EE3;&#x7801;</p>
+<pre><code>import React, { Component } from &apos;react&apos;;
+
+class App extends Component {
+    constructor() {
+        super();
+        this.state={
+            num:100,
+            sex: true
+
+        };
+    }
+    click(){
+        console.log(this);
+        this.setState({
+            num:this.state.num+1,
+            sex:!this.state.sex
+        });    
+    }
+   render() {
+        return (
+            &lt;div&gt;
+                &#x6211;&#x5F53;&#x524D;&#x7684;&#x6570;&#x5B57;&#x662F;{this.state.num} &lt;br/&gt;
+                &lt;p&gt;&#x6027;&#x522B;:{this.state.sex? &apos;&#x7537;&apos;:&apos;&#x5973;&apos;}&lt;/p&gt;
+                &lt;button onClick={this.click.bind(this)}&gt;+1&lt;/button&gt;
+//&#x901A;&#x8FC7;bind&#x6765;&#x7ED1;&#x5B9A;this&#x6307;&#x5411;
+            &lt;/div&gt;
+        );
+    }
+}
+
+export default App;
+</code></pre><h3 id="t2&#x4F7F;&#x7528;ref &#x6765;&#x83B7;&#x53D6;&#x771F;&#x5B9E; DOM &#x7684;&#x65B9;&#x5F0F;">&#x4F7F;&#x7528;ref &#x6765;&#x83B7;&#x53D6;&#x771F;&#x5B9E; DOM &#x7684;&#x65B9;&#x5F0F; <a href="#t2&#x4F7F;&#x7528;ref &#x6765;&#x83B7;&#x53D6;&#x771F;&#x5B9E; DOM &#x7684;&#x65B9;&#x5F0F;"> # </a></h3>
+<p><strong>1.&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;(&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x5F0F; &#x8FC7;&#x65F6; &#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;)</strong></p>
+<pre><code>console.log(this.refs.input.value;)
+&lt;Test ref=&apos;Test&apos;/&gt; //
+</code></pre><p><strong>2.&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;(&#x7528;&#x56DE;&#x8C03;&#x65B9;&#x5F0F; &#x5B98;&#x65B9;&#x63A8;&#x8350;)</strong></p>
+<pre><code>console.log(this.input1);
+&lt;input ref={input=&gt;this.input1=input} /&gt;
+</code></pre>
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
