@@ -1,0 +1,32 @@
+{
+    "name": "ZZ:D",
+    "version": "1.0.0",
+    "description": "Welcome to ZZ:D's blog",
+    "keywords": [
+        "note"
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "monkeyone1 <a793472281@qq.com>",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "default",
+        "md": [
+           {"React":[
+                "React第八天.md",
+                "React第九天.md",
+                "React第七天.md",
+                "React第六天.md",
+                "React第五天.md",
+                "React第四天.md",
+                "React第三天.md",
+                "React第二天.md",
+                "React第一天.md",
+               " webpack 的基本使用.md"
+           ]}
+        ]
+    }
+}
